@@ -1,0 +1,423 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" class="" lang="ru"><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+<title>OpenProject</title>
+
+
+<meta name="app_base_path" content="">
+<base href="/">
+
+<meta name="demo_projects_available" content="true">
+<meta name="boards_demo_data_available" content="true">
+<meta name="demo_view_of_type_team_planner_seeded" content="true">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="acZSVyzIFsHG6iA8e1XhLnTgAVpFacGnGrJ0oX4SMAH4djx+F2f0jBtQ+eCvCBNoap2itUHZig9p4+IBa6buGw==">
+<meta name="openproject_initializer" data-locale="ru" data-defaultlocale="en" data-firstweekofyear="" data-firstdayofweek="" data-environment="production" data-edition="standard">
+
+<!-- global meta hooks before any scripts are loaded-->
+
+
+  <link rel="icon" type="image/x-icon" href="/assets/favicon-939cbdbd3b0f071269abd28ddfcb2f922d6257ce6ef70ba4941ea1708a564ab3.ico">
+
+  <link rel="apple-touch-icon" type="image/png" href="/assets/apple-touch-icon-120x120-7cc127b22515cb03208e0cd2ab29c30545d6c1d232a8d68058c751bf29626354.png" sizes="120x120">
+
+
+
+
+<script src="/assets/frontend/vendor.4929bfe98431e90e.js"></script><script src="/assets/frontend/polyfills.158536a7c9fc0853.js"></script><script src="/assets/frontend/runtime.d5ca0b9931698a87.js"></script><script src="/assets/frontend/main.2cd6e58a91f45a4a.js"></script><style>:root{--fc-small-font-size:.85em;--fc-page-bg-color:#fff;--fc-neutral-bg-color:hsla(0,0%,82%,.3);--fc-neutral-text-color:grey;--fc-border-color:#ddd;--fc-button-text-color:#fff;--fc-button-bg-color:#2c3e50;--fc-button-border-color:#2c3e50;--fc-button-hover-bg-color:#1e2b37;--fc-button-hover-border-color:#1a252f;--fc-button-active-bg-color:#1a252f;--fc-button-active-border-color:#151e27;--fc-event-bg-color:#3788d8;--fc-event-border-color:#3788d8;--fc-event-text-color:#fff;--fc-event-selected-overlay-color:rgba(0,0,0,.25);--fc-more-link-bg-color:#d0d0d0;--fc-more-link-text-color:inherit;--fc-event-resizer-thickness:8px;--fc-event-resizer-dot-total-width:8px;--fc-event-resizer-dot-border-width:1px;--fc-non-business-color:hsla(0,0%,84%,.3);--fc-bg-event-color:#8fdf82;--fc-bg-event-opacity:0.3;--fc-highlight-color:rgba(188,232,241,.3);--fc-today-bg-color:rgba(255,220,40,.15);--fc-now-indicator-color:red}.fc-not-allowed,.fc-not-allowed .fc-event{cursor:not-allowed}.fc-unselectable{-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-user-select:none;-moz-user-select:none;user-select:none}.fc{display:flex;flex-direction:column;font-size:1em}.fc,.fc *,.fc :after,.fc :before{box-sizing:border-box}.fc table{border-collapse:collapse;border-spacing:0;font-size:1em}.fc th{text-align:center}.fc td,.fc th{padding:0;vertical-align:top}.fc a[data-navlink]{cursor:pointer}.fc a[data-navlink]:hover{text-decoration:underline}.fc-direction-ltr{direction:ltr;text-align:left}.fc-direction-rtl{direction:rtl;text-align:right}.fc-theme-standard td,.fc-theme-standard th{border:1px solid var(--fc-border-color)}.fc-liquid-hack td,.fc-liquid-hack th{position:relative}@font-face{font-family:fcicons;font-style:normal;font-weight:400;src:url("data:application/x-font-ttf;charset=utf-8;base64,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") format("truetype")}.fc-icon{speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font-family:fcicons!important;font-style:normal;font-variant:normal;font-weight:400;height:1em;line-height:1;text-align:center;text-transform:none;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:1em}.fc-icon-chevron-left:before{content:"\e900"}.fc-icon-chevron-right:before{content:"\e901"}.fc-icon-chevrons-left:before{content:"\e902"}.fc-icon-chevrons-right:before{content:"\e903"}.fc-icon-minus-square:before{content:"\e904"}.fc-icon-plus-square:before{content:"\e905"}.fc-icon-x:before{content:"\e906"}.fc .fc-button{border-radius:0;font-family:inherit;font-size:inherit;line-height:inherit;margin:0;overflow:visible;text-transform:none}.fc .fc-button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}.fc .fc-button{-webkit-appearance:button}.fc .fc-button:not(:disabled){cursor:pointer}.fc .fc-button::-moz-focus-inner{border-style:none;padding:0}.fc .fc-button{background-color:transparent;border:1px solid transparent;border-radius:.25em;display:inline-block;font-size:1em;font-weight:400;line-height:1.5;padding:.4em .65em;text-align:center;-webkit-user-select:none;-moz-user-select:none;user-select:none;vertical-align:middle}.fc .fc-button:hover{text-decoration:none}.fc .fc-button:focus{box-shadow:0 0 0 .2rem rgba(44,62,80,.25);outline:0}.fc .fc-button:disabled{opacity:.65}.fc .fc-button-primary{background-color:var(--fc-button-bg-color);border-color:var(--fc-button-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:hover{background-color:var(--fc-button-hover-bg-color);border-color:var(--fc-button-hover-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:disabled{background-color:var(--fc-button-bg-color);border-color:var(--fc-button-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:focus{box-shadow:0 0 0 .2rem rgba(76,91,106,.5)}.fc .fc-button-primary:not(:disabled).fc-button-active,.fc .fc-button-primary:not(:disabled):active{background-color:var(--fc-button-active-bg-color);border-color:var(--fc-button-active-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:not(:disabled).fc-button-active:focus,.fc .fc-button-primary:not(:disabled):active:focus{box-shadow:0 0 0 .2rem rgba(76,91,106,.5)}.fc .fc-button .fc-icon{font-size:1.5em;vertical-align:middle}.fc .fc-button-group{display:inline-flex;position:relative;vertical-align:middle}.fc .fc-button-group>.fc-button{flex:1 1 auto;position:relative}.fc .fc-button-group>.fc-button.fc-button-active,.fc .fc-button-group>.fc-button:active,.fc .fc-button-group>.fc-button:focus,.fc .fc-button-group>.fc-button:hover{z-index:1}.fc-direction-ltr .fc-button-group>.fc-button:not(:first-child){border-bottom-left-radius:0;border-top-left-radius:0;margin-left:-1px}.fc-direction-ltr .fc-button-group>.fc-button:not(:last-child){border-bottom-right-radius:0;border-top-right-radius:0}.fc-direction-rtl .fc-button-group>.fc-button:not(:first-child){border-bottom-right-radius:0;border-top-right-radius:0;margin-right:-1px}.fc-direction-rtl .fc-button-group>.fc-button:not(:last-child){border-bottom-left-radius:0;border-top-left-radius:0}.fc .fc-toolbar{align-items:center;display:flex;justify-content:space-between}.fc .fc-toolbar.fc-header-toolbar{margin-bottom:1.5em}.fc .fc-toolbar.fc-footer-toolbar{margin-top:1.5em}.fc .fc-toolbar-title{font-size:1.75em;margin:0}.fc-direction-ltr .fc-toolbar>*>:not(:first-child){margin-left:.75em}.fc-direction-rtl .fc-toolbar>*>:not(:first-child){margin-right:.75em}.fc-direction-rtl .fc-toolbar-ltr{flex-direction:row-reverse}.fc .fc-scroller{-webkit-overflow-scrolling:touch;position:relative}.fc .fc-scroller-liquid{height:100%}.fc .fc-scroller-liquid-absolute{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-scroller-harness{direction:ltr;overflow:hidden;position:relative}.fc .fc-scroller-harness-liquid{height:100%}.fc-direction-rtl .fc-scroller-harness>.fc-scroller{direction:rtl}.fc-theme-standard .fc-scrollgrid{border:1px solid var(--fc-border-color)}.fc .fc-scrollgrid,.fc .fc-scrollgrid table{table-layout:fixed;width:100%}.fc .fc-scrollgrid table{border-left-style:hidden;border-right-style:hidden;border-top-style:hidden}.fc .fc-scrollgrid{border-bottom-width:0;border-collapse:separate;border-right-width:0}.fc .fc-scrollgrid-liquid{height:100%}.fc .fc-scrollgrid-section,.fc .fc-scrollgrid-section table,.fc .fc-scrollgrid-section>td{height:1px}.fc .fc-scrollgrid-section-liquid>td{height:100%}.fc .fc-scrollgrid-section>*{border-left-width:0;border-top-width:0}.fc .fc-scrollgrid-section-footer>*,.fc .fc-scrollgrid-section-header>*{border-bottom-width:0}.fc .fc-scrollgrid-section-body table,.fc .fc-scrollgrid-section-footer table{border-bottom-style:hidden}.fc .fc-scrollgrid-section-sticky>*{background:var(--fc-page-bg-color);position:sticky;z-index:3}.fc .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky>*{top:0}.fc .fc-scrollgrid-section-footer.fc-scrollgrid-section-sticky>*{bottom:0}.fc .fc-scrollgrid-sticky-shim{height:1px;margin-bottom:-1px}.fc-sticky{position:sticky}.fc .fc-view-harness{flex-grow:1;position:relative}.fc .fc-view-harness-active>.fc-view{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-col-header-cell-cushion{display:inline-block;padding:2px 4px}.fc .fc-bg-event,.fc .fc-highlight,.fc .fc-non-business{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-non-business{background:var(--fc-non-business-color)}.fc .fc-bg-event{background:var(--fc-bg-event-color);opacity:var(--fc-bg-event-opacity)}.fc .fc-bg-event .fc-event-title{font-size:var(--fc-small-font-size);font-style:italic;margin:.5em}.fc .fc-highlight{background:var(--fc-highlight-color)}.fc .fc-cell-shaded,.fc .fc-day-disabled{background:var(--fc-neutral-bg-color)}a.fc-event,a.fc-event:hover{text-decoration:none}.fc-event.fc-event-draggable,.fc-event[href]{cursor:pointer}.fc-event .fc-event-main{position:relative;z-index:2}.fc-event-dragging:not(.fc-event-selected){opacity:.75}.fc-event-dragging.fc-event-selected{box-shadow:0 2px 7px rgba(0,0,0,.3)}.fc-event .fc-event-resizer{display:none;position:absolute;z-index:4}.fc-event-selected .fc-event-resizer,.fc-event:hover .fc-event-resizer{display:block}.fc-event-selected .fc-event-resizer{background:var(--fc-page-bg-color);border-color:inherit;border-radius:calc(var(--fc-event-resizer-dot-total-width)/2);border-style:solid;border-width:var(--fc-event-resizer-dot-border-width);height:var(--fc-event-resizer-dot-total-width);width:var(--fc-event-resizer-dot-total-width)}.fc-event-selected .fc-event-resizer:before{bottom:-20px;content:"";left:-20px;position:absolute;right:-20px;top:-20px}.fc-event-selected,.fc-event:focus{box-shadow:0 2px 5px rgba(0,0,0,.2)}.fc-event-selected:before,.fc-event:focus:before{bottom:0;content:"";left:0;position:absolute;right:0;top:0;z-index:3}.fc-event-selected:after,.fc-event:focus:after{background:var(--fc-event-selected-overlay-color);bottom:-1px;content:"";left:-1px;position:absolute;right:-1px;top:-1px;z-index:1}.fc-h-event{background-color:var(--fc-event-bg-color);border:1px solid var(--fc-event-border-color);display:block}.fc-h-event .fc-event-main{color:var(--fc-event-text-color)}.fc-h-event .fc-event-main-frame{display:flex}.fc-h-event .fc-event-time{max-width:100%;overflow:hidden}.fc-h-event .fc-event-title-container{flex-grow:1;flex-shrink:1;min-width:0}.fc-h-event .fc-event-title{display:inline-block;left:0;max-width:100%;overflow:hidden;right:0;vertical-align:top}.fc-h-event.fc-event-selected:before{bottom:-10px;top:-10px}.fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-start),.fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-end){border-bottom-left-radius:0;border-left-width:0;border-top-left-radius:0}.fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-end),.fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-start){border-bottom-right-radius:0;border-right-width:0;border-top-right-radius:0}.fc-h-event:not(.fc-event-selected) .fc-event-resizer{bottom:0;top:0;width:var(--fc-event-resizer-thickness)}.fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start,.fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end{cursor:w-resize;left:calc(var(--fc-event-resizer-thickness)*-.5)}.fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end,.fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start{cursor:e-resize;right:calc(var(--fc-event-resizer-thickness)*-.5)}.fc-h-event.fc-event-selected .fc-event-resizer{margin-top:calc(var(--fc-event-resizer-dot-total-width)*-.5);top:50%}.fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-start,.fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-end{left:calc(var(--fc-event-resizer-dot-total-width)*-.5)}.fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-end,.fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-start{right:calc(var(--fc-event-resizer-dot-total-width)*-.5)}.fc .fc-popover{box-shadow:0 2px 6px rgba(0,0,0,.15);position:absolute;z-index:9999}.fc .fc-popover-header{align-items:center;display:flex;flex-direction:row;justify-content:space-between;padding:3px 4px}.fc .fc-popover-title{margin:0 2px}.fc .fc-popover-close{cursor:pointer;font-size:1.1em;opacity:.65}.fc-theme-standard .fc-popover{background:var(--fc-page-bg-color);border:1px solid var(--fc-border-color)}.fc-theme-standard .fc-popover-header{background:var(--fc-neutral-bg-color)}</style><style>:root{--fc-daygrid-event-dot-width:8px}.fc-daygrid-day-events:after,.fc-daygrid-day-events:before,.fc-daygrid-day-frame:after,.fc-daygrid-day-frame:before,.fc-daygrid-event-harness:after,.fc-daygrid-event-harness:before{clear:both;content:"";display:table}.fc .fc-daygrid-body{position:relative;z-index:1}.fc .fc-daygrid-day.fc-day-today{background-color:var(--fc-today-bg-color)}.fc .fc-daygrid-day-frame{min-height:100%;position:relative}.fc .fc-daygrid-day-top{display:flex;flex-direction:row-reverse}.fc .fc-day-other .fc-daygrid-day-top{opacity:.3}.fc .fc-daygrid-day-number{padding:4px;position:relative;z-index:4}.fc .fc-daygrid-month-start{font-size:1.1em;font-weight:700}.fc .fc-daygrid-day-events{margin-top:1px}.fc .fc-daygrid-body-balanced .fc-daygrid-day-events{left:0;position:absolute;right:0}.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{min-height:2em;position:relative}.fc .fc-daygrid-body-natural .fc-daygrid-day-events{margin-bottom:1em}.fc .fc-daygrid-event-harness{position:relative}.fc .fc-daygrid-event-harness-abs{left:0;position:absolute;right:0;top:0}.fc .fc-daygrid-bg-harness{bottom:0;position:absolute;top:0}.fc .fc-daygrid-day-bg .fc-non-business{z-index:1}.fc .fc-daygrid-day-bg .fc-bg-event{z-index:2}.fc .fc-daygrid-day-bg .fc-highlight{z-index:3}.fc .fc-daygrid-event{margin-top:1px;z-index:6}.fc .fc-daygrid-event.fc-event-mirror{z-index:7}.fc .fc-daygrid-day-bottom{font-size:.85em;margin:0 2px}.fc .fc-daygrid-day-bottom:after,.fc .fc-daygrid-day-bottom:before{clear:both;content:"";display:table}.fc .fc-daygrid-more-link{border-radius:3px;cursor:pointer;line-height:1;margin-top:1px;max-width:100%;overflow:hidden;padding:2px;position:relative;white-space:nowrap;z-index:4}.fc .fc-daygrid-more-link:hover{background-color:rgba(0,0,0,.1)}.fc .fc-daygrid-week-number{background-color:var(--fc-neutral-bg-color);color:var(--fc-neutral-text-color);min-width:1.5em;padding:2px;position:absolute;text-align:center;top:0;z-index:5}.fc .fc-more-popover .fc-popover-body{min-width:220px;padding:10px}.fc-direction-ltr .fc-daygrid-event.fc-event-start,.fc-direction-rtl .fc-daygrid-event.fc-event-end{margin-left:2px}.fc-direction-ltr .fc-daygrid-event.fc-event-end,.fc-direction-rtl .fc-daygrid-event.fc-event-start{margin-right:2px}.fc-direction-ltr .fc-daygrid-more-link{float:left}.fc-direction-ltr .fc-daygrid-week-number{border-radius:0 0 3px 0;left:0}.fc-direction-rtl .fc-daygrid-more-link{float:right}.fc-direction-rtl .fc-daygrid-week-number{border-radius:0 0 0 3px;right:0}.fc-liquid-hack .fc-daygrid-day-frame{position:static}.fc-daygrid-event{border-radius:3px;font-size:var(--fc-small-font-size);position:relative;white-space:nowrap}.fc-daygrid-block-event .fc-event-time{font-weight:700}.fc-daygrid-block-event .fc-event-time,.fc-daygrid-block-event .fc-event-title{padding:1px}.fc-daygrid-dot-event{align-items:center;display:flex;padding:2px 0}.fc-daygrid-dot-event .fc-event-title{flex-grow:1;flex-shrink:1;font-weight:700;min-width:0;overflow:hidden}.fc-daygrid-dot-event.fc-event-mirror,.fc-daygrid-dot-event:hover{background:rgba(0,0,0,.1)}.fc-daygrid-dot-event.fc-event-selected:before{bottom:-10px;top:-10px}.fc-daygrid-event-dot{border:calc(var(--fc-daygrid-event-dot-width)/2) solid var(--fc-event-border-color);border-radius:calc(var(--fc-daygrid-event-dot-width)/2);box-sizing:content-box;height:0;margin:0 4px;width:0}.fc-direction-ltr .fc-daygrid-event .fc-event-time{margin-right:3px}.fc-direction-rtl .fc-daygrid-event .fc-event-time{margin-left:3px}</style><style>.fc-v-event{background-color:var(--fc-event-bg-color);border:1px solid var(--fc-event-border-color);display:block}.fc-v-event .fc-event-main{color:var(--fc-event-text-color);height:100%}.fc-v-event .fc-event-main-frame{display:flex;flex-direction:column;height:100%}.fc-v-event .fc-event-time{flex-grow:0;flex-shrink:0;max-height:100%;overflow:hidden}.fc-v-event .fc-event-title-container{flex-grow:1;flex-shrink:1;min-height:0}.fc-v-event .fc-event-title{bottom:0;max-height:100%;overflow:hidden;top:0}.fc-v-event:not(.fc-event-start){border-top-left-radius:0;border-top-right-radius:0;border-top-width:0}.fc-v-event:not(.fc-event-end){border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom-width:0}.fc-v-event.fc-event-selected:before{left:-10px;right:-10px}.fc-v-event .fc-event-resizer-start{cursor:n-resize}.fc-v-event .fc-event-resizer-end{cursor:s-resize}.fc-v-event:not(.fc-event-selected) .fc-event-resizer{height:var(--fc-event-resizer-thickness);left:0;right:0}.fc-v-event:not(.fc-event-selected) .fc-event-resizer-start{top:calc(var(--fc-event-resizer-thickness)/-2)}.fc-v-event:not(.fc-event-selected) .fc-event-resizer-end{bottom:calc(var(--fc-event-resizer-thickness)/-2)}.fc-v-event.fc-event-selected .fc-event-resizer{left:50%;margin-left:calc(var(--fc-event-resizer-dot-total-width)/-2)}.fc-v-event.fc-event-selected .fc-event-resizer-start{top:calc(var(--fc-event-resizer-dot-total-width)/-2)}.fc-v-event.fc-event-selected .fc-event-resizer-end{bottom:calc(var(--fc-event-resizer-dot-total-width)/-2)}.fc .fc-timegrid .fc-daygrid-body{z-index:2}.fc .fc-timegrid-divider{padding:0 0 2px}.fc .fc-timegrid-body{min-height:100%;position:relative;z-index:1}.fc .fc-timegrid-axis-chunk{position:relative}.fc .fc-timegrid-axis-chunk>table,.fc .fc-timegrid-slots{position:relative;z-index:1}.fc .fc-timegrid-slot{border-bottom:0;height:1.5em}.fc .fc-timegrid-slot:empty:before{content:"\00a0"}.fc .fc-timegrid-slot-minor{border-top-style:dotted}.fc .fc-timegrid-slot-label-cushion{display:inline-block;white-space:nowrap}.fc .fc-timegrid-slot-label{vertical-align:middle}.fc .fc-timegrid-axis-cushion,.fc .fc-timegrid-slot-label-cushion{padding:0 4px}.fc .fc-timegrid-axis-frame-liquid{height:100%}.fc .fc-timegrid-axis-frame{align-items:center;display:flex;justify-content:flex-end;overflow:hidden}.fc .fc-timegrid-axis-cushion{flex-shrink:0;max-width:60px}.fc-direction-ltr .fc-timegrid-slot-label-frame{text-align:right}.fc-direction-rtl .fc-timegrid-slot-label-frame{text-align:left}.fc-liquid-hack .fc-timegrid-axis-frame-liquid{bottom:0;height:auto;left:0;position:absolute;right:0;top:0}.fc .fc-timegrid-col.fc-day-today{background-color:var(--fc-today-bg-color)}.fc .fc-timegrid-col-frame{min-height:100%;position:relative}.fc-media-screen.fc-liquid-hack .fc-timegrid-col-frame{bottom:0;height:auto;left:0;position:absolute;right:0;top:0}.fc-media-screen .fc-timegrid-cols{bottom:0;left:0;position:absolute;right:0;top:0}.fc-media-screen .fc-timegrid-cols>table{height:100%}.fc-media-screen .fc-timegrid-col-bg,.fc-media-screen .fc-timegrid-col-events,.fc-media-screen .fc-timegrid-now-indicator-container{left:0;position:absolute;right:0;top:0}.fc .fc-timegrid-col-bg{z-index:2}.fc .fc-timegrid-col-bg .fc-non-business{z-index:1}.fc .fc-timegrid-col-bg .fc-bg-event{z-index:2}.fc .fc-timegrid-col-bg .fc-highlight{z-index:3}.fc .fc-timegrid-bg-harness{left:0;position:absolute;right:0}.fc .fc-timegrid-col-events{z-index:3}.fc .fc-timegrid-now-indicator-container{bottom:0;overflow:hidden}.fc-direction-ltr .fc-timegrid-col-events{margin:0 2.5% 0 2px}.fc-direction-rtl .fc-timegrid-col-events{margin:0 2px 0 2.5%}.fc-timegrid-event-harness{position:absolute}.fc-timegrid-event-harness>.fc-timegrid-event{bottom:0;left:0;position:absolute;right:0;top:0}.fc-timegrid-event-harness-inset .fc-timegrid-event,.fc-timegrid-event.fc-event-mirror,.fc-timegrid-more-link{box-shadow:0 0 0 1px var(--fc-page-bg-color)}.fc-timegrid-event,.fc-timegrid-more-link{border-radius:3px;font-size:var(--fc-small-font-size)}.fc-timegrid-event{margin-bottom:1px}.fc-timegrid-event .fc-event-main{padding:1px 1px 0}.fc-timegrid-event .fc-event-time{font-size:var(--fc-small-font-size);margin-bottom:1px;white-space:nowrap}.fc-timegrid-event-short .fc-event-main-frame{flex-direction:row;overflow:hidden}.fc-timegrid-event-short .fc-event-time:after{content:"\00a0-\00a0"}.fc-timegrid-event-short .fc-event-title{font-size:var(--fc-small-font-size)}.fc-timegrid-more-link{background:var(--fc-more-link-bg-color);color:var(--fc-more-link-text-color);cursor:pointer;margin-bottom:1px;position:absolute;z-index:9999}.fc-timegrid-more-link-inner{padding:3px 2px;top:0}.fc-direction-ltr .fc-timegrid-more-link{right:0}.fc-direction-rtl .fc-timegrid-more-link{left:0}.fc .fc-timegrid-now-indicator-line{border-color:var(--fc-now-indicator-color);border-style:solid;border-width:1px 0 0;left:0;position:absolute;right:0;z-index:4}.fc .fc-timegrid-now-indicator-arrow{border-color:var(--fc-now-indicator-color);border-style:solid;margin-top:-5px;position:absolute;z-index:4}.fc-direction-ltr .fc-timegrid-now-indicator-arrow{border-bottom-color:transparent;border-top-color:transparent;border-width:5px 0 5px 6px;left:0}.fc-direction-rtl .fc-timegrid-now-indicator-arrow{border-bottom-color:transparent;border-top-color:transparent;border-width:5px 6px 5px 0;right:0}</style><style>:root{--fc-list-event-dot-width:10px;--fc-list-event-hover-bg-color:#f5f5f5}.fc-theme-standard .fc-list{border:1px solid var(--fc-border-color)}.fc .fc-list-empty{align-items:center;background-color:var(--fc-neutral-bg-color);display:flex;height:100%;justify-content:center}.fc .fc-list-empty-cushion{margin:5em 0}.fc .fc-list-table{border-style:hidden;width:100%}.fc .fc-list-table tr>*{border-left:0;border-right:0}.fc .fc-list-sticky .fc-list-day>*{background:var(--fc-page-bg-color);position:sticky;top:0}.fc .fc-list-table thead{left:-10000px;position:absolute}.fc .fc-list-table tbody>tr:first-child th{border-top:0}.fc .fc-list-table th{padding:0}.fc .fc-list-day-cushion,.fc .fc-list-table td{padding:8px 14px}.fc .fc-list-day-cushion:after{clear:both;content:"";display:table}.fc-theme-standard .fc-list-day-cushion{background-color:var(--fc-neutral-bg-color)}.fc-direction-ltr .fc-list-day-text,.fc-direction-rtl .fc-list-day-side-text{float:left}.fc-direction-ltr .fc-list-day-side-text,.fc-direction-rtl .fc-list-day-text{float:right}.fc-direction-ltr .fc-list-table .fc-list-event-graphic{padding-right:0}.fc-direction-rtl .fc-list-table .fc-list-event-graphic{padding-left:0}.fc .fc-list-event.fc-event-forced-url{cursor:pointer}.fc .fc-list-event:hover td{background-color:var(--fc-list-event-hover-bg-color)}.fc .fc-list-event-graphic,.fc .fc-list-event-time{white-space:nowrap;width:1px}.fc .fc-list-event-dot{border:calc(var(--fc-list-event-dot-width)/2) solid var(--fc-event-border-color);border-radius:calc(var(--fc-list-event-dot-width)/2);box-sizing:content-box;display:inline-block;height:0;width:0}.fc .fc-list-event-title a{color:inherit;text-decoration:none}.fc .fc-list-event.fc-event-forced-url:hover a{text-decoration:underline}</style><link rel="stylesheet" href="/assets/frontend/styles.f30501bbb7b64083.css" media="all">
+
+<link rel="stylesheet" href="/highlighting/styles/260e43a91daa853b3f5a9aec079060eaa994eaddeba085bdb6713977baf6fb96.css" media="all">
+
+
+  <style type="text/css">
+
+    .op-logo--link {
+      background-image: url(/assets/logo_openproject_white_big-2c6d79fa03613154cf6bd67c622dbae5b93ed3199e0e7332d96b6f8ec21f85a1.png);
+    }
+  </style>
+
+
+
+  <!-- project specific tags -->
+  
+
+  <!-- page specific tags -->
+  
+  <meta name="current_menu_item" content="">
+<style>.op-new-features--teaser-image[_ngcontent-yhq-c465]{background-image:var(--new-feature-teaser-image);min-width:170px;background-size:contain;background-repeat:no-repeat;background-position-x:right}</style><style>.cdk-drag-preview{box-shadow:0 0 10px 5px #0000001a;z-index:10000!important}.top-menu-search{display:flex;align-items:center;position:relative;height:var(--header-height);line-height:var(--header-height);margin:0 15px}@media screen and (max-width: 679px){.top-menu-search{margin:0}}.top-menu-search--back-button{display:none}.top-menu-search--button{padding:0;margin:0;background:transparent;border:0;font:inherit;text-align:inherit;position:absolute;right:2px;font-size:var(--header-item-font-size);color:var(--header-item-font-color)}.top-menu-search--button:hover{text-decoration:none}@media screen and (max-width: 679px){.top-menu-search--button{position:relative;padding:0 8px}.top-menu-search--button:hover{background:var(--header-item-bg-hover-color);color:var(--header-item-font-hover-color);border-bottom:var(--header-border-bottom-width) solid var(--header-border-bottom-color)}}.top-menu-search--button.-input-focused{color:var(--header-search-field-font-color)}.top-menu-search--loading{top:var(--header-height)-11px;height:46px;z-index:1051}.top-menu-search--input{width:calc(160px + 3vw);font-size:.9rem;transition:width .2s ease-in-out}.top-menu-search--input::-ms-clear{margin-right:5px;width:20px}.top-menu-search--input .ng-select-container{background:transparent;border-color:var(--header-item-font-color)}.top-menu-search--input .ng-arrow-wrapper{display:none}.top-menu-search--input .ng-clear-wrapper{color:var(--header-item-font-color);top:1px;width:30px;right:25px;text-align:center}@media screen and (max-width: 679px){.top-menu-search--input .ng-input{top:0!important}}.top-menu-search--input .ng-input input{color:var(--header-item-font-color);height:30px;cursor:text}.top-menu-search--input .ng-placeholder{color:var(--header-item-font-color)!important}.top-menu-search--input.-expanded{width:calc(160px + 13vw);background:white;border-radius:4px;color:var(--header-search-field-font-color)}.top-menu-search--input.-expanded .ng-placeholder,.top-menu-search--input.-expanded .ng-clear-wrapper,.top-menu-search--input.-expanded input{color:var(--header-search-field-font-color)}.top-menu-search--input .ng-dropdown-panel-items.scroll-host{scrollbar-color:transparent transparent;scrollbar-width:thin;max-height:80vh;height:auto}.top-menu-search--input .ng-dropdown-panel-items.scroll-host::-webkit-scrollbar{height:10px;width:10px}.top-menu-search--input .ng-dropdown-panel-items.scroll-host::-webkit-scrollbar-track{background:transparent}.top-menu-search--input .ng-dropdown-panel-items.scroll-host::-webkit-scrollbar-thumb{background:#DDDDDD;visibility:hidden}.top-menu-search--input .ng-dropdown-panel-items.scroll-host:hover{scrollbar-color:#DDDDDD transparent}.top-menu-search--input .ng-dropdown-panel-items.scroll-host:hover::-webkit-scrollbar-thumb{visibility:visible}.top-menu-search--input .ng-option{border-bottom:1px solid #EAEAEA;white-space:normal;padding:5px 10px;background-color:unset}.top-menu-search--input .ng-option:last-child{border-bottom:none}.top-menu-search--input .ng-option.ng-option-marked{color:var(--header-drop-down-item-font-hover-color)}.top-menu-search--input .ng-option.ng-option-disabled{display:none}.top-menu-search--input .ng-option.ng-option-selected{color:var(--header-drop-down-item-font-hover-color)}.top-menu-search--input.-markable .ng-option.ng-option-marked{background-color:var(--drop-down-hover-bg-color)}.top-menu-search--input.-markable .ng-option.ng-option-selected{background-color:var(--drop-down-selected-bg-color)}.top-menu-search--input .ng-spinner-loader{position:relative;right:14px}
+</style><style>.cdk-drag-preview{box-shadow:0 0 10px 5px #0000001a;z-index:10000!important}@media only screen and (max-width: 679px){.top-menu-search--input{display:none}.top-menu-search--input.-expanded{display:block;min-width:unset;flex-basis:100%;position:unset;flex-grow:1}.top-menu-search--input.-expanded .scroll-host{max-height:calc(100vh - var(--header-height))}.top-menu-search--input.-expanded .ng-clear-wrapper{width:40px;right:0}.top-menu-search--input.-expanded .ng-select-bottom{height:calc(100vh - var(--header-height));overflow-y:auto;margin:0}.top-menu-search--input.-expanded .ng-select-container{height:36px!important;border-radius:4px}.top-menu-search--input.-expanded .ng-input input{height:36px}.top-menu-search .top-menu-search--back-button{padding:0;margin:0;background:transparent;border:0;font:inherit;text-align:inherit;display:initial;width:50px;text-align:center;color:var(--header-item-font-color)}.top-menu-search .top-menu-search--back-button:hover,.top-menu-search .top-menu-search--back-button:focus,.top-menu-search .top-menu-search--back-button:active{text-decoration:none}.top-menu-search .top-menu-search--loading{top:var(--header-height)1px}.top-menu-search .top-menu-search--button.-input-focused{color:var(--header-item-font-color)}}
+</style><style>.cdk-drag-preview{box-shadow:0 0 10px 5px #0000001a;z-index:10000!important}.global-search{flex-grow:1}@media screen and (max-width: 679px){.global-search{display:none}}.global-search--input[type=text]{line-height:20px}.global-search--option,.global-search--option:hover{padding:5px;line-height:15px;min-height:25px;word-break:break-word;color:var(--body-font-color);text-decoration:none;display:flex}.global-search--option-meta{display:flex;flex-direction:column;flex-grow:1;overflow:hidden}.global-search--search-term{flex-grow:1}.global-search--project-scope{flex-grow:0;flex-shrink:1;border:1px solid var(--button--border-color);font-size:13px;background:var(--button--background-color);border-radius:2px;padding:0 4px;color:var(--body-font-color)}.global-search--principal{margin-right:5px;margin-left:-5px}.global-search--wp-content{display:grid;grid-template-columns:50% 1fr auto;grid-template-areas:"project idlink status";font-size:.8rem;padding:5px 0}.global-search--wp-project{grid-area:project;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;-ms-text-overflow:ellipsis;white-space:nowrap}.global-search--wp-id{grid-area:idlink;place-self:right;font-style:italic;color:var(--gray-dark);font-size:13px;white-space:nowrap}.global-search--wp-status{grid-area:status;overflow:hidden;font-style:italic}.global-search--wp-subject{font-weight:700;display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;line-height:1.5}
+</style><style>.op-autocompleter--option-wrapper[_ngcontent-yhq-c110]{padding:5px;line-height:15px;min-height:25px;word-break:break-word;display:grid;grid-template-columns:auto 1fr;grid-template-rows:1fr 1fr}.op-autocompleter--option-principal[_ngcontent-yhq-c110]{margin-right:5px;float:left;grid-column-start:1;grid-column-end:2;grid-row-start:1;grid-row-end:3}.op-autocompleter--wp-content[_ngcontent-yhq-c110]{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"project idlink status";font-size:.8rem;padding:1px 0 5px}.op-autocompleter--wp-project[_ngcontent-yhq-c110]{grid-area:project;display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.op-autocompleter--wp-id[_ngcontent-yhq-c110]{grid-area:idlink;place-self:right;font-style:italic;margin:0 .5rem;text-align:center}.op-autocompleter--wp-status[_ngcontent-yhq-c110]{grid-area:status;overflow:hidden;font-style:italic}.op-autocompleter--wp-subject[_ngcontent-yhq-c110]{font-weight:700;display:inline-block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.op-autocompleter--option-principal-wrapper[_ngcontent-yhq-c110]{display:flex;overflow:hidden}</style><style>.ng-select{position:relative;display:block;box-sizing:border-box}.ng-select div,.ng-select input,.ng-select span{box-sizing:border-box}.ng-select [hidden]{display:none}.ng-select.ng-select-searchable .ng-select-container .ng-value-container .ng-input{opacity:1}.ng-select.ng-select-opened .ng-select-container{z-index:1001}.ng-select.ng-select-disabled .ng-select-container .ng-value-container .ng-placeholder,.ng-select.ng-select-disabled .ng-select-container .ng-value-container .ng-value{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default}.ng-select.ng-select-disabled .ng-arrow-wrapper{cursor:default}.ng-select.ng-select-filtered .ng-placeholder{display:none}.ng-select .ng-select-container{cursor:default;display:flex;outline:0;overflow:hidden;position:relative;width:100%}.ng-select .ng-select-container .ng-value-container{display:flex;flex:1}.ng-select .ng-select-container .ng-value-container .ng-input{opacity:0}.ng-select .ng-select-container .ng-value-container .ng-input>input{box-sizing:content-box;background:none;border:0;box-shadow:none;outline:0;cursor:default;width:100%}.ng-select .ng-select-container .ng-value-container .ng-input>input::-ms-clear{display:none}.ng-select .ng-select-container .ng-value-container .ng-input>input[readonly]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:0;padding:0}.ng-select.ng-select-single.ng-select-filtered .ng-select-container .ng-value-container .ng-value{visibility:hidden}.ng-select.ng-select-single .ng-select-container .ng-value-container,.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value .ng-value-icon{display:none}.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input{position:absolute;left:0;width:100%}.ng-select.ng-select-multiple.ng-select-disabled>.ng-select-container .ng-value-container .ng-value .ng-value-icon{display:none}.ng-select.ng-select-multiple .ng-select-container .ng-value-container{flex-wrap:wrap}.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value{white-space:nowrap}.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value.ng-value-disabled .ng-value-icon{display:none}.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon{cursor:pointer}.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-input{flex:1;z-index:2}.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder{position:absolute;z-index:1}.ng-select .ng-clear-wrapper{cursor:pointer;position:relative;width:17px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ng-select .ng-clear-wrapper .ng-clear{display:inline-block;font-size:18px;line-height:1;pointer-events:none}.ng-select .ng-spinner-loader{border-radius:50%;width:17px;height:17px;margin-right:5px;font-size:10px;position:relative;text-indent:-9999em;border-top:2px solid rgba(66,66,66,.2);border-right:2px solid rgba(66,66,66,.2);border-bottom:2px solid rgba(66,66,66,.2);border-left:2px solid #424242;transform:translateZ(0);-webkit-animation:.8s linear infinite load8;animation:.8s linear infinite load8}.ng-select .ng-spinner-loader:after{border-radius:50%;width:17px;height:17px}@-webkit-keyframes load8{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes load8{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.ng-select .ng-arrow-wrapper{cursor:pointer;position:relative;text-align:center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.ng-select .ng-arrow-wrapper .ng-arrow{pointer-events:none;display:inline-block;height:0;width:0;position:relative}.ng-dropdown-panel{box-sizing:border-box;position:absolute;opacity:0;width:100%;z-index:1050;-webkit-overflow-scrolling:touch}.ng-dropdown-panel .ng-dropdown-panel-items{display:block;height:auto;box-sizing:border-box;max-height:240px;overflow-y:auto}.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ng-dropdown-panel .ng-dropdown-panel-items .ng-option{box-sizing:border-box;cursor:pointer;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ng-dropdown-panel .ng-dropdown-panel-items .ng-option .highlighted{font-weight:700;text-decoration:underline}.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.disabled{cursor:default}.ng-dropdown-panel .scroll-host{overflow:hidden;overflow-y:auto;position:relative;display:block;-webkit-overflow-scrolling:touch}.ng-dropdown-panel .scrollable-content{top:0;left:0;width:100%;height:100%;position:absolute}.ng-dropdown-panel .total-padding{width:1px;opacity:0}</style><style>.op-header-project-select{max-width:100%}
+</style><style>[_nghost-yhq-c121] {
+        display: block;
+      }</style></head>
+<body class="theme-core_design controller-homescreen action-index ee-banners-visible env-production -browser-firefox -browser-windows bcf-deactivated __overflowing_element_container __overflowing_body __ng2-bootstrap-has-run" data-relative_url_root="/" data-overflowing-identifier=".__overflowing_body" data-rendered-at="2023-06-07T09:15:57Z">
+<div class="warning-bar--wrapper">
+  
+  
+  
+</div>
+
+<noscript>
+  <div class="top-shelf">
+    <p>
+      <span>
+        <i class="icon3 icon-warning"  aria-hidden="true"></i>
+        <strong>JavaScript отключён</strong>
+      </span>
+      Для правильной работы OpenProject JavaScript должен быть включён!
+      <a href="http://www.enable-javascript.com/" target="_blank">Узнать больше</a>
+    </p>
+  </div>
+</noscript>
+<op-toasts-container ng-version="15.1.3" op-dynamic-bootstrap="true"><div class="op-toast--wrapper"><div class="op-toast--casing"><!----></div></div></op-toasts-container>
+<op-modal-overlay ng-version="15.1.3" op-dynamic-bootstrap="true"><div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div><div tabindex="0" cdkfocusinitial="" cdktrapfocus="" class="spot-modal-overlay"><button type="button" class="spot-button spot-modal-overlay--close-button"><span class="spot-icon spot-icon_close"></span></button><!----></div><div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div></op-modal-overlay>
+<spot-drop-modal-portal ng-version="15.1.3" class="spot-drop-modal-portal" op-dynamic-bootstrap="true"><!----></spot-drop-modal-portal>
+<div id="wrapper" style="" class="can-hide-navigation nosidebar">
+    <header class="op-app-header" data-qa-search-open="1">
+      <div class="op-app-header--start">
+        <h1 class="hidden-for-sighted">
+          Верхнее меню
+        </h1>
+        <main-menu-toggle class="op-app-menu op-main-menu-toggle" ng-version="15.1.3" op-dynamic-bootstrap="true"><!----></main-menu-toggle>
+        <a href="" class="hidden-for-sighted skip-navigation-link" id="skip-navigation--content" aria-label="Кликните здесь, чтобы пропустить меню и перейти к содержанию">
+          Перейти к содержанию
+        </a>
+        <ul class="op-app-menu op-app-menu_drop-left"><li class="op-app-menu--item"><op-header-project-select class="op-angular-component op-header-project-select" ng-version="15.1.3" op-dynamic-bootstrap="true"><spot-drop-modal alignment="bottom-start" class="op-project-list-modal spot-drop-modal"><button id="projects-menu" accesskey="5" aria-haspopup="true" type="button" slot="trigger" class="op-app-menu--item-action"><span class="op-app-menu--item-title ellipsis">Выберите проект</span><i class="op-app-menu--item-dropdown-indicator button--dropdown-indicator"></i></button><span tabindex="0" aria-label="Это якорь фокусировки для модальностей. Нажмите shift+ tab, чтобы вернуться к элементу модального триггера."></span><!----></spot-drop-modal></op-header-project-select></li></ul>
+      </div>
+      <div class="op-app-header--center">
+        <div class="op-logo"><a class="op-logo--link" href="http://localhost:8080/">Главная</a></div>
+      </div>
+      <div class="op-app-header--end">
+        
+        <div class="op-app-search">
+  <label class="hidden-for-sighted" for="q">Поиск</label>
+
+  <global-search-input ng-version="15.1.3" op-dynamic-bootstrap="true"><div class="top-menu-search"><!----><op-autocompleter class="global-search op-autocompleter" _nghost-yhq-c110=""><div _ngcontent-yhq-c110="" class="inline-label"><ng-select _ngcontent-yhq-c110="" role="listbox" id="global-search-input" accesskey="4" class="top-menu-search--input ng-select ng-select-single ng-select-searchable ng-select-clearable ng-select-typeahead ng-untouched ng-pristine ng-valid"><div class="ng-select-container"><div class="ng-value-container"><div class="ng-placeholder">Искать ...</div><!----><!----><div class="ng-input"><input role="combobox" type="text" autocorrect="off" autocapitalize="none" autocomplete="ae9b69d9121b" class="global-search--input" aria-expanded="false"></div></div><!----><!----><span class="ng-arrow-wrapper"><span class="ng-arrow"></span></span></div><!----></ng-select></div><!----><!----></op-autocompleter><button role="button" id="top-menu-search-button" class="top-menu-search--button search-form-normal" title="Искать"><op-icon icon-classes="icon5 icon-search ellipsis" class="op-icon--wrapper"><i aria-hidden="true" class="icon5 icon-search ellipsis"></i><!----></op-icon></button></div></global-search-input>
+</div>
+<ul class="op-app-menu"><li class="op-app-menu--item op-app-menu--item_has-dropdown hidden-for-mobile"><a icon="icon-menu" title="Модули" aria-haspopup="true" class="op-app-menu--item-action  " span_class="op-app-menu--item-title " href="#"><i class="icon-menu" aria-hidden="true"></i><span class="op-app-menu--item-title "></span></a><ul style="display:none" id="more-menu" class="op-app-menu--dropdown op-menu drop-down--modules " aria-expanded="false"><li data-name="projects"><a class="projects-menu-item op-menu--item-action" title="Проекты" data-qa-selector="op-menu--item-action" href="http://localhost:8080/projects"><span class="op-menu--item-title " lang="en">Проекты</span></a></li><li data-name="work_packages"><a class="work-packages-menu-item op-menu--item-action" title="Комплекс работ" data-qa-selector="op-menu--item-action" href="http://localhost:8080/work_packages"><span class="op-menu--item-title " lang="en">Комплекс работ</span></a></li><li data-name="news"><a class="news-menu-item op-menu--item-action" title="Новости" data-qa-selector="op-menu--item-action" href="http://localhost:8080/news"><span class="op-menu--item-title " lang="en">Новости</span></a></li></ul></li><li class="op-app-menu--item op-app-menu--item_has-dropdown op-app-help hidden-for-mobile"><a title="Справка" class="op-app-menu--item-action" aria-haspopup="true" href="#"><i class="icon-help op-app-help--icon" aria-hidden="true"></i></a><ul style="display:none" class="op-app-menu--dropdown op-menu" aria-expanded="false"><li class="op-menu--item"><span class="op-menu--headline" title="Приступая к работе">Приступая к работе</span></li><li class="op-menu--item" data-augmented-model-wrapper="" data-activation-selector=".onboarding-modal--activation-link" data-modal-iframe-url="https://player.vimeo.com/video/163426858?autoplay=1" data-modal-class-name="onboarding-modal">
+  <a title="Вводное видео" class="op-menu--item-action onboarding-modal--activation-link" href="">Вводное видео</a>
+  
+<div class="modal-delivery-element">
+  <div class="spot-modal--header">
+    <span class="spot-icon spot-icon_user"></span>
+    <span>Добро пожаловать в OpenProject</span>
+  </div>
+  <div class="spot-divider"></div>
+  <div class="onboarding--main spot-modal--body spot-container">
+    <div class="onboarding--video-block">
+      <div class="onboarding--video-text">
+        <span>Получите быстрый обзор управления проектом и сотрудничества команды с OpenProject. Вы можете перезапустить это видео в меню справки.</span>
+      </div>
+      <div class="onboarding--video iframe-target-wrapper">
+      </div>
+    </div>
+  </div>
+
+  <div class="onboarding--footer spot-action-bar">
+    <div class="spot-action-bar--right">
+      <button class="button button_no-margin spot-action-bar--action" dynamic-content-modal-close-button="" title="Закрыть">Закрыть</button>
+    </div>
+  </div>
+</div>
+
+</li>
+<hr class="op-menu--separator"><li class="op-menu--item"><span class="op-menu--headline" title="Помощь и поддержка">Помощь и поддержка</span></li><li class="op-menu--item"><a title="Обновитесь до корпоративной версии" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/enterprise-edition/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=ee-upsale-help-menu">Обновитесь до корпоративной версии</a></li><li class="op-menu--item"><a title="Руководство пользователя" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/docs/user-guide/">Руководство пользователя</a></li><li class="op-menu--item"><a title="Видео" class="op-menu--item-action" target="_blank" rel="noopener" href="https://www.youtube.com/c/OpenProjectCommunity">Видео</a></li><li class="op-menu--item"><a title="Ярлыки" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/docs/user-guide/keyboard-shortcuts-access-keys/">Ярлыки</a></li><li class="op-menu--item"><a title="Форум сообщества" target="_blank" class="op-menu--item-action" rel="noopener" href="https://community.openproject.com/projects/openproject/forums">Форум сообщества</a></li><li class="op-menu--item"><a title="Профессиональная поддержка" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/pricing/#support">Профессиональная поддержка</a></li><hr class="op-menu--separator"><li class="op-menu--item"><span class="op-menu--headline" title="Дополнительные ресурсы">Дополнительные ресурсы</span></li><li class="op-menu--item"><a title="Политика конфиденциальности данных и безопасности" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/legal/privacy/">Политика конфиденциальности данных и безопасности</a></li><li class="op-menu--item"><a title="Цифровая доступность (DE)" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/de/rechtliches/erklaerung-zur-digitalen-barrierefreiheit/">Цифровая доступность (DE)</a></li><li class="op-menu--item"><a title="OpenProject веб-сайт" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=website-help-menu">OpenProject веб-сайт</a></li><li class="op-menu--item"><a title="Оповещения системы безопасности / Новости" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/newsletter/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=newsletter-help-menu">Оповещения системы безопасности / Новости</a></li><li class="op-menu--item"><a title="Openproject блог" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/blog">Openproject блог</a></li><li class="op-menu--item"><a title="Список изменений" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/docs/release-notes/">Список изменений</a></li><li class="op-menu--item"><a title="Сообщить об ошибке" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/docs/development/report-a-bug/">Сообщить об ошибке</a></li><li class="op-menu--item"><a title="Дорожная карта разработки" target="_blank" class="op-menu--item-action" rel="noopener" href="https://community.openproject.org/projects/openproject/roadmap">Дорожная карта разработки</a></li><li class="op-menu--item"><a title="Добавить и редактировать перевод" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/docs/development/translate-openproject/">Добавить и редактировать перевод</a></li><li class="op-menu--item"><a title="Документация по API" target="_blank" class="op-menu--item-action" rel="noopener" href="https://www.openproject.org/docs/api/">Документация по API</a></li></ul></li><li class="op-app-menu--item op-app-menu--item_has-dropdown "><a class="op-app-menu--item-action" title="Войти" href="/login"><span class="op-app-menu--item-title hidden-for-mobile">Войти</span><i class="op-app-menu--item-dropdown-indicator button--dropdown-indicator hidden-for-mobile"></i><i class="icon2 icon-user hidden-for-desktop"></i></a><ul style="display:none" class="op-app-menu--dropdown " aria-expanded="false">
+<div id="nav-login-content">
+  <form autocomplete="off" class="-vertical form" action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓" autocomplete="off"><input type="hidden" name="authenticity_token" value="acZSVyzIFsHG6iA8e1XhLnTgAVpFacGnGrJ0oX4SMAH4djx+F2f0jBtQ+eCvCBNoap2itUHZig9p4+IBa6buGw==" autocomplete="off">
+    <input type="hidden" name="back_url" id="back_url" value="http://localhost:8080/" autocomplete="off">
+
+    <div class="grid-block">
+      <div class="form--field -required">
+        <label class="form--label" title="Имя пользователя" for="username-pulldown">Имя пользователя</label>
+        <div class="form--field-container">
+          <span class="form--text-field-container"><input type="text" name="username" id="username-pulldown" tabindex="1" autocapitalize="none" class="form--text-field"></span>
+        </div>
+        <div class="form--field-extra-actions">
+              <a title="Создайте новую учетную запись" href="/account/register">Создайте новую учетную запись</a>
+        </div>
+      </div>
+
+      <div class="form--field -required">
+        <label class="form--label" title="Пароль" for="password-pulldown">Пароль</label>
+        <div class="form--field-container">
+          <span class="form--text-field-container"><input type="password" name="password" id="password-pulldown" tabindex="1" class="form--text-field -password"></span>
+        </div>
+        <div class="form--field-extra-actions">
+            <a href="/account/lost_password">Забыли пароль?</a>
+        </div>
+      </div>
+
+      <div class="form--field">
+        <label class="form--label">
+          &nbsp;
+        </label>
+        <input type="submit" name="login" id="login-pulldown" value="Войти" class="button -highlight" tabindex="1">
+      </div>
+    </div>
+
+    
+
+</form></div>
+</ul></li></ul>
+      </div>
+    </header>
+  <div id="main" class="can-hide-navigation nosidebar">
+    <div class="content-overlay"></div>
+    <main id="content-wrapper" class="can-hide-navigation nosidebar">
+        <div id="breadcrumb" class="can-hide-navigation nosidebar">
+          <span style="display: block" class="position-label hidden-for-sighted">Вы здесь: </span>
+          <ul class="op-breadcrumb" data-qa-selector="op-breadcrumb"><li class="first-breadcrumb-element"></li></ul>
+          
+        </div>
+      
+      <div id="content" class="can-hide-navigation nosidebar">
+        <h1 class="hidden-for-sighted">Содержание</h1>
+        
+          <h2 class="headline--application">
+  <span><i class="icon-context icon-enterprise" aria-hidden="true"></i></span>
+  OpenProject
+</h2>
+
+
+
+  <section class="widget-boxes -flex">
+      <div class="widget-box welcome">
+      <div class="op-widget-box--header" data-qa-selector="op-widget-box--header">
+  <div class="op-widget-box--header-title title-container">
+    <h2 class="editable-toolbar-title--fixed">Welcome to OpenProject!</h2>
+  </div>
+</div>
+
+
+<div class="wiki op-uc-container">
+  <p class="op-uc-p">Select one of the demo projects to get started with some demo data we have prepared for you.</p>
+<ul class="op-uc-list">
+<li class="op-uc-list--item">
+<a href="http://localhost:8080/projects/demo-project" rel="noopener noreferrer" class="op-uc-link">Demo project</a>: to get an overview about classical project management.</li>
+<li class="op-uc-list--item">
+<a href="http://localhost:8080/projects/your-scrum-project" rel="noopener noreferrer" class="op-uc-link">Scrum project</a>: to learn about Agile and Scrum project management.</li>
+</ul>
+<p class="op-uc-p">Also, you can create a blank <a href="http://localhost:8080/projects/new" rel="noopener noreferrer" class="op-uc-link">new project</a>.</p>
+<p class="op-uc-p">Never stop collaborating. With open source and open mind.</p>
+<p class="op-uc-p">You can change this welcome text <a href="http://localhost:8080/admin/settings/general" rel="noopener noreferrer" class="op-uc-link">here</a>.</p>
+</div>
+
+      </div>
+      <div class="widget-box projects">
+      <div class="op-widget-box--header" data-qa-selector="op-widget-box--header">
+  <div class="op-widget-box--header-title title-container">
+    <h2 class="editable-toolbar-title--fixed">Проекты</h2>
+  </div>
+</div>
+
+
+  <p class="widget-box--additional-info">Новые видимые проекты в данном экземпляре.</p>
+  <ul class="widget-box--arrow-links">
+    <li>
+      <a title="This is a short summary of the goals of this demo Scrum project." href="/projects/your-scrum-project">Scrum project</a>
+      <small>(06/06/2023)</small>
+    </li>
+    <li>
+      <a title="This is a short summary of the goals of this demo project." href="/projects/demo-project">Demo project</a>
+      <small>(06/06/2023)</small>
+    </li>
+  </ul>
+
+<div class="widget-box--blocks--buttons">
+
+    <a class="button -highlight-inverted" title="Просмотреть все проекты" href="/projects">Просмотреть все проекты</a>
+</div>
+
+      </div>
+      <div class="widget-box new_features">
+      <div class="op-widget-box--header" data-qa-selector="op-widget-box--header">
+  <div class="op-widget-box--header-title title-container">
+    <h2 class="editable-toolbar-title--fixed">Новые особенности</h2>
+  </div>
+</div>
+
+
+<homescreen-new-features-block _nghost-yhq-c465="" ng-version="15.1.3" op-dynamic-bootstrap="true"><div _ngcontent-yhq-c465="" class="op-new-features"><p _ngcontent-yhq-c465="" class="widget-box--additional-info"> Читайте о новых возможностях и обновлениях продуктов. </p><div _ngcontent-yhq-c465="" class="widget-box--description"><p _ngcontent-yhq-c465="">Релиз содержит различные новые функции и улучшения: <br> <ul class="widget-box--arrow-links"> <li>Загрузить и связать файлы с рабочими пакетами до вашего хранилища файлов Nextcloud.</li> <li>Последующая деятельность по изменениям проекта при отслеживании активности проекта.</li> <li>Добавляет публичные праздники в один экземпляр (нерабочие дни).</li> <li>Архивные проекты неадминов.</li> <li>Новый фильтр по умолчанию для просроченных пакетов работ.</li> </ul>
+</p><img _ngcontent-yhq-c465="" class="widget-box--teaser-image op-new-features--teaser-image" src="/assets/frontend/assets/images/12_5_features.svg"></div><a _ngcontent-yhq-c465="" target="_blank" href="https://www.openproject.org/blog/openproject-12-5-release">Подробнее о новых функциях</a></div></homescreen-new-features-block>
+
+      </div>
+      <div class="widget-box news">
+      <div class="op-widget-box--header" data-qa-selector="op-widget-box--header">
+  <div class="op-widget-box--header-title title-container">
+    <h2 class="editable-toolbar-title--fixed">Последние новости</h2>
+  </div>
+</div>
+
+  <ul class="widget-box--arrow-links">
+    <li class="widget-box--arrow-multiline">
+      <op-principal class="widget-box--avatar news-author-avatar hidden-for-mobile op-principal" data-principal="{&quot;href&quot;:&quot;/api/v3/users/1&quot;,&quot;name&quot;:&quot;System&quot;,&quot;id&quot;:1}" data-size="&quot;default&quot;" data-hide-name="true" ng-version="15.1.3" op-dynamic-bootstrap="true"><div class="op-principal--avatar op-avatar op-avatar_default op-avatar_user op-avatar--fallback" title="System" style="background: rgb(191, 64, 66);">SS</div></op-principal>
+      <div class="widget-box--project">
+        <a href="/projects/your-scrum-project">Scrum project</a>: 
+        <a href="/news/2-welcome-to-your-scrum-demo-project">Welcome to your Scrum demo project</a>
+      </div>
+      <div class="widget-box--author news-author">Добавлено <a href="/users/1">System</a> в 2023-06-06</div>
+      <p class="widget-box--additional-info">We are glad you joined. In this module you can communicate project news to your team members.
+</p>
+    </li>
+    <li class="widget-box--arrow-multiline">
+      <op-principal class="widget-box--avatar news-author-avatar hidden-for-mobile op-principal" data-principal="{&quot;href&quot;:&quot;/api/v3/users/1&quot;,&quot;name&quot;:&quot;System&quot;,&quot;id&quot;:1}" data-size="&quot;default&quot;" data-hide-name="true" ng-version="15.1.3" op-dynamic-bootstrap="true"><div class="op-principal--avatar op-avatar op-avatar_default op-avatar_user op-avatar--fallback" title="System" style="background: rgb(191, 64, 66);">SS</div></op-principal>
+      <div class="widget-box--project">
+        <a href="/projects/demo-project">Demo project</a>: 
+        <a href="/news/1-welcome-to-your-demo-project">Welcome to your demo project</a>
+      </div>
+      <div class="widget-box--author news-author">Добавлено <a href="/users/1">System</a> в 2023-06-06</div>
+      <p class="widget-box--additional-info">We are glad you joined. In this module you can communicate project news to your team members.
+</p>
+    </li>
+  </ul>
+
+      </div>
+      <div class="widget-box community">
+      <div class="op-widget-box--header" data-qa-selector="op-widget-box--header">
+  <div class="op-widget-box--header-title title-container">
+    <h2 class="editable-toolbar-title--fixed">OpenProject сообщество</h2>
+  </div>
+</div>
+
+
+<ul class="widget-box--arrow-links">
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://www.openproject.org/docs/user-guide/">Руководство пользователя</a>
+  </li>
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://www.openproject.org/docs/user-guide/keyboard-shortcuts-access-keys/">Ярлыки</a>
+  </li>
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://community.openproject.com/projects/openproject/forums">Форум сообщества</a></li>
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://www.openproject.org/pricing/#support">Профессиональная поддержка</a>
+  </li>
+  <li>
+    <a aria-label="OpenProject веб-сайт" target="_blank" title="OpenProject веб-сайт" href="https://www.openproject.org/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=website-home-screen">OpenProject веб-сайт</a>
+  </li>
+  <li>
+    <a aria-label="Оповещения системы безопасности / Новости" target="_blank" title="Оповещения системы безопасности / Новости" href="https://www.openproject.org/newsletter/?utm_source=unknown&amp;utm_medium=op-instance&amp;utm_campaign=newsletter-home-screen">Оповещения системы безопасности / Новости</a>
+  </li>
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://www.openproject.org/blog">Openproject блог</a>
+  </li>
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://www.openproject.org/docs/release-notes/">Список изменений</a>
+  </li>
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://www.openproject.org/docs/development/report-a-bug/">Сообщить об ошибке</a>
+  </li>
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://community.openproject.org/projects/openproject/roadmap">Дорожная карта разработки</a>
+  </li>
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://www.openproject.org/docs/development/translate-openproject/">Добавить и редактировать перевод</a>
+  </li>
+  <li>
+    <a class="openproject--static-link" target="_blank" rel="noopener" href="https://www.openproject.org/docs/api/">Документация по API</a>
+  </li>
+</ul>
+
+      </div>
+      <div class="widget-box upsale">
+      <div class="widget-box--description">
+  <img class="widget-box--blocks--upsale-image" src="/assets/enterprise-add-on-674b81d3d81dd2a1890b194af1b46a484de746e9bd3dceda297053fb4db1b1a8.svg">
+  <div class="widget-box--blocks--upsale-description">
+    <div class="widget-box--blocks--upsale-title">
+
+      <span class="spot-icon spot-icon_enterprise-addons"></span>
+      <span>Обновитесь до корпоративной версии</span>
+
+      <p class="widget-box--blocks--upsale-description">
+        Корпоративная версия OpenProject построена поверх версии Сообщества. В него входят дополнения к предприятиям и профессиональная поддержка, ориентированная главным образом на организации с более чем 10 пользователями, которые управляют критически важными для бизнеса проектами с помощью OpenProject.
+
+      </p>
+    
+      <p>
+        <b>Стать героем!</b> Разработчикам тоже нужно оплачивать счета. Обновившись до корпоративной версии вы поддержите это сообщество с открытым исходным кодом и внесете свой вклад в его разработку, обслуживание и постоянное совершенствование.
+      </p>
+
+      <p>
+        <b>Мы предлагаем надежное и проверенное временем программное решение корпоративного уровня для управления проектами, в котором открытый исходный код сочетается с открытостью к новым идеям.
+</b>
+      </p>
+    
+    </div>
+  </div>
+</div>
+
+<div class="widget-box--blocks--upsale-buttons">
+  <a class="button--link widget-box--blocks--upsale-info-button" aria-label="Больше информации" target="_blank" title="Больше информации" href="https://www.openproject.org/enterprise-edition/?utm_source=unknown&amp;utm_medium=community-edition&amp;utm_campaign=home-screen">
+    <span class="button--text">Больше информации</span>
+    <span class="spot-icon spot-icon_button--icon icon-external-link"></span>
+</a>
+  <a class="button -highlight" aria-label="Обновить сейчас" target="_blank" title="Обновить сейчас" href="https://www.openproject.org/pricing/">
+    <span class="spot-icon spot-icon_enterprise-addons enterprise-addons--button-icon"></span>
+    <span class="button--text">Обновить сейчас</span>
+</a>
+</div>
+
+      </div>
+  </section>
+
+  <section class="homescreen--links">
+    <a class="homescreen--links--item" href="https://www.openproject.org/docs/user-guide/" target="_blank" title="Руководство пользователя">
+      <i class="icon-context icon-rename" aria-hidden="true"></i>
+      Руководство пользователя
+    </a>
+    <a class="homescreen--links--item" href="https://www.openproject.org/docs/" target="_blank" title="Глоссарий">
+      <i class="icon-context icon-glossar" aria-hidden="true"></i>
+      Глоссарий
+    </a>
+    <a class="homescreen--links--item" href="https://www.openproject.org/docs/user-guide/keyboard-shortcuts-access-keys/" target="_blank" title="Ярлыки">
+      <i class="icon-context icon-shortcuts" aria-hidden="true"></i>
+      Ярлыки
+    </a>
+    <a class="homescreen--links--item" href="https://community.openproject.com/projects/openproject/forums" target="_blank" title="Форум сообщества">
+      <i class="icon-context icon-forums" aria-hidden="true"></i>
+      Форум сообщества
+    </a>
+  </section>
+
+
+
+        
+      </div>
+    </main>
+  </div>
+  <div id="ajax-indicator" style="display:none;"><span>Загрузка...</span></div>
+</div>
+<script nonce="">
+  // execute these lines to prevent flickering when page loads:
+
+  (function($) {
+    var wrapper = $('#wrapper');
+    var savedMainMenuWidth = window.OpenProject.guardedLocalStorage("openProject-mainMenuWidth");
+    var mainMenuCollapsed =  window.OpenProject.guardedLocalStorage("openProject-mainMenuCollapsed");
+
+    if (window.innerWidth < 680) {
+      // force hide on load for mobile
+      $('.can-hide-navigation').addClass('hidden-navigation');
+    }
+
+    if (mainMenuCollapsed === 'true') {
+      savedMainMenuWidth = 0;
+    }
+
+    if (savedMainMenuWidth || savedMainMenuWidth === 0) {
+      document.documentElement.style.setProperty("--main-menu-width", savedMainMenuWidth + 'px');
+    }
+
+    wrapper.show();
+
+    // Wrapper for page-specific JS from deprecated inline functions
+    // no longer available with CSP.
+    
+  }(jQuery));
+</script><div class="op-wide-autocomplete-wrapper"></div>
+
+
+
+
+</body></html>
